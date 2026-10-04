@@ -1,0 +1,14 @@
+CREATE TABLE IF NOT EXISTS user_profile(
+ Profile_ID INT AUTO_INCREMENT PRIMARY KEY,
+    User_ID INT NOT NULL,
+    Firstname VARCHAR(255) NOT NULL,
+    Lastname VARCHAR(255) NOT NULL,
+    Middlename VARCHAR(255) DEFAULT NULL,
+    Address VARCHAR(255) NOT NULL,
+    Contact VARCHAR(255) NOT NULL,
+    
+    CONSTRAINT fk_user
+    	FOREIGN KEY (User_ID)
+    	REFERENCES users(id)
+    	ON DELETE CASCADE
+);
